@@ -1,0 +1,76 @@
+:root {
+  --color-primario: #70e9e3;
+  --color-secundario: rgb(26, 238, 238);
+
+}
+
+*{margin: 0;
+padding:0;
+}
+
+
+
+p { color: var(--color-texto, #c5c2c2); }
+
+@media only screen and (min-width: 800px) {
+:root{
+  --color-primario: #e04d21;
+  --color-secundario: rgb(156, 39, 18);
+}
+}
+
+@media only screen and (max-width: 768px) {
+:root{
+  --color-primario: #cde021;
+  --color-secundario: rgb(212, 224, 40);
+}
+}
+
+canvas {
+  position: fixed;   /* fijo en el viewport */
+  top: 0;  left: 0;
+  width: 100%;  height: 100%;
+  z-index: -1;  /* detrás de todo el HTML */
+  pointer-events: none; /* los clicks pasan al HTML */
+}
+* { box-sizing: border-box; }
+
+body {
+    min-width: 320px;
+    margin: 0;
+    padding: 32px 16px;
+    color: var(--green-dark);
+    background: var(--yellow-light);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.game {
+    width: min(100%, 440px);
+    margin: 0 auto;
+    padding: 24px;
+    background: #fffef5;
+    border: 1px solid #c9d9ad;
+    border-radius: 8px;
+}
+
+h1 { margin: 0 0 8px; color: var(--green-dark); font-size: 30px; }
+.score { margin: 8px 0 4px; font-size: 24px; font-weight: 700; }
+.cookie { display: block; width: min(240px, 75vw); aspect-ratio: 1; margin: 0 auto; padding: 8px; border: 0; background: transparent; cursor: pointer; }
+.cookie img { width: 100%; height: 100%; object-fit: contain; }
+.cookie:hover { transform: scale(1.04); }
+.cookie:active { transform: scale(.96); }
+.cookie:focus-visible, button:focus-visible { outline: 3px solid #d5ae19; outline-offset: 3px; }
+.message { min-height: 22px; color: var(--green); font-size: 14px; }
+.powers { margin-top: 20px; padding-top: 16px; border-top: 1px solid #d9e3c5; }
+h2 { margin: 0 0 12px; font-size: 20px; }
+.powers button { width: 100%; min-height: 42px; margin-top: 8px; padding: 9px 12px; border: 0; border-radius: 4px; color: var(--green-dark); background: var(--yellow); cursor: pointer; font-size: 14px; font-weight: 700; }
+.powers button:hover:not(:disabled) { background: #e8c532; }
+.powers button:disabled { color: #607161; background: var(--green-light); cursor: not-allowed; }
+.power-status { margin: 5px 0 10px; color: #536b54; font-size: 12px; }
+
+@media (max-width: 420px) {
+    body { padding: 16px 10px; }
+    .game { padding: 18px 14px; }
+    h1 { font-size: 26px; }
+}
